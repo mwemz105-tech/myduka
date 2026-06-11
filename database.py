@@ -9,7 +9,7 @@ cur = conn.cursor()
 def get_products():
     cur.execute("select * from products")
     products_data = cur.fetchall()
-    print(products_data)
+    return products_data
 
 def get_sales():
     cur.execute("select * from sales")

@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from database import get_products
 
 #Flask Instance
 app = Flask(__name__)
@@ -12,7 +13,8 @@ def home():
 #products route
 @app.route("/products")
 def products():
-    return render_template('products.html')
+    products_data = get_products()
+    return render_template('products.html',products_data=products_data)
 
 
 #sales route
