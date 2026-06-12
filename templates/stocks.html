@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
-{% block title %} Sales {% endblock %}
+{% block title %} Stock {% endblock %}
 {% block content %}
 <div>
-    <p>This is sales</p>
+    <p>This is stock</p>
 
     <div>
         <table id="example" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Sale ID</th>
+                    <th>Stock ID</th>
                     <th>Product ID</th>
-                    <th>Quantiy Sold</th>
-                    <th>Sle date</th>
+                    <th>Stock quantity</th>
+                    
                     
                 </tr>
             </thead>
             <tbody>
-                {% for i in sales_data %}
+                {% for i in stocks_data %}
                 <tr>
                     <td>{{ i[0] }}</td>
                     <td>{{  i[1] }}</td>
                     <td> {{ i[2] }}</td>
-                    <td> {{ i[3] }}</td>
+                    
                 </tr>
                 {% endfor %}
             </tbody>

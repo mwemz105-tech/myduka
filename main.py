@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from database import get_products
+from database import get_sales
+from database import get_stocks
 
 #Flask Instance
 app = Flask(__name__)
@@ -20,13 +22,15 @@ def products():
 #sales route
 @app.route('/sales')
 def sales():
-    return render_template('sales.html')
+    sales_data = get_sales()
+    return render_template('sales.html', sales_data=sales_data)
 
 
-#stock route
-@app.route('/stock')
-def stock():
-    return render_template('stock.html')
+#stocks route
+@app.route('/stocks')
+def stocks():
+    stocks_data=get_stocks()
+    return render_template('stocks.html',stocks_data=stocks_data)
 
 
 @app.route('/dashboard')
