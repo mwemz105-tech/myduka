@@ -4,24 +4,41 @@
 <div>
     <p>This is stock</p>
 
+
+    <div>
+        <form action="/add_stocks" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Product ID</label>
+                <input type="number" name="p_name" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Stock Quantity</label>
+                <input type="number" name="b_price" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
+
     <div>
         <table id="example" class="table table-striped">
             <thead>
                 <tr>
                     <th>Stock ID</th>
                     <th>Product ID</th>
-                    <th>Stock quantity</th>
-                    
-                    
+                    <th>Stock Quantity</th>
+
+
                 </tr>
             </thead>
             <tbody>
                 {% for i in stocks_data %}
                 <tr>
                     <td>{{ i[0] }}</td>
-                    <td>{{  i[1] }}</td>
+                    <td>{{ i[1] }}</td>
                     <td> {{ i[2] }}</td>
-                    
+
                 </tr>
                 {% endfor %}
             </tbody>
